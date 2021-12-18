@@ -12,9 +12,9 @@ const CategoryPost = ({ posts }) => {
     }
 
   return (
-      <div className="container mx-auto h-screen pt-4 px-10 ">
+      <div className="container mx-auto h-screen pt-4 px-4 mb-64">
         <h1 className="text-2xl">Latest Posts for you</h1>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-2">
             {posts.map((post, index) => (
               <PostCard key={index} post={post.node} />
             )).reverse()}

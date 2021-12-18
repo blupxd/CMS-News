@@ -23,19 +23,19 @@ const Footer = () => {
     }, []);
     return (
         <div className='bg-black'>
-            <div className='mx-0 py-16 grid grid-cols-2'>
-                <div className='grid grid-cols-3 gap-y-4 text-center sm:ml-4 ml-16'>
-                {categories.map((category)=>(
-                    <div className='py-2 ' key={category.name}>
-                        <Link key={category.slug} href={`/category/${category.slug}`}>
-                            <span className="text-center hover:bg-red-600 text-white md:text-l sm:text-sm border-l-4 border-red-600 py-2 px-2 cursor-pointer">
-                                {category.name}
-                            </span>
-                        </Link>
-                    </div>
-                        ))}
+            <div className='mx-8 py-16 grid grid-cols-2'>
+                <div className='grid grid-cols-3 lg:col-span-1 text-jusitfy col-span-2 lg:text-justify md:col-span-2 md:text-jusitfy lg:col-span-1 gap-y-6 gap-x-8 mx-auto'>
+                    {categories.map((category)=>(
+                        <div className='py-2' key={category.name}>
+                            <Link key={category.slug} href={`/category/${category.slug}`}>
+                                <span className="text-center hover:bg-red-600 text-white lg:text-l text-sm md:text-l sm:text-sm border-l-4 border-red-600 py-2 px-2 cursor-pointer">
+                                    {category.name}
+                                </span>
+                            </Link>
+                        </div>
+                            ))}
                 </div>
-                <div className='grid gap-y-2 border-l-4 border-red-600 px-2'>
+                <div className='grid gap-y-2 lg:col-span-1 col-span-2 md:col-span-2 mx-auto border-l-4 mt-2 border-red-600 px-2'>
                     <div className='flex items-center gap-2 '>
                     <FontAwesomeIcon className='text-white w-6 h-6' icon={faGithub} />
                     <a href='https://github.com/blupxd' className='text-white text-xs'>GitHub Account</a>

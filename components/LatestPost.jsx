@@ -19,17 +19,18 @@ const [latestPost, setLatestPosts] = useState([]);
             <div className="grid grid-cols-6 lg:grid-rows-2 sm:grid-rows-1 gap-5 mb-16">
             
             {latestPost.slice(2,3).map((post)=>  
-                <div key={post.title} className="flex md:col-span-6 sm:col-span-6 pb-14 mb-12 lg:row-span-2 md:col-span-3 lg:col-span-3 sm:col-span-4 sm:row-span-1">
+                <div key={post.title} className="md:flex sm:flex lg:flex block md:col-span-6 col-span-6 sm:col-span-6 
+                lg:row-span-2 md:col-span-6 lg:col-span-3 sm:col-span-4 sm:row-span-1">
                     <div className="text-left h-30">
                         <h1 className="transition duration-300 w-32 mb-0 cursor-pointer
-                                    hover:text-red-700 md:text-lg sm:w-64 md:w-64 font-semibold">
+                                    hover:text-red-700 lg:w-64 w-64 md:text-lg sm:w-64 md:w-64 font-semibold">
                                 <a className="text-3xl" href={`/post/${post.slug}`}>
                                     {post.title}
                                 </a>
                         </h1>
-                        <p className="text-sm w-64 h-16">{post.excerpt}</p>   
-                        <div className="inline-flex gap-1 items-center absolute mt-4">
-                            <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
+                        <p className="text-xl w-72">{post.excerpt}</p>   
+                        <div className="inline-flex gap-1 items-center">
+                            <FontAwesomeIcon className="text-gray-500" icon={faClock} width="16px" height="16px" />
                             <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
                         </div>
                     </div>
@@ -47,7 +48,7 @@ const [latestPost, setLatestPosts] = useState([]);
             </div>
         )}
         {latestPost.slice(0,2).map((post)=>
-            <div key={post.title} className="px-5 sm:col-span-6 border-l-4 border-red-500 gap-4 flex lg:col-span-3 md:col-span-6">
+            <div key={post.title} className="px-5 lg:contents hidden sm:col-span-6 border-l-4 border-red-500 gap-4 flex lg:col-span-3 md:col-span-6">
                 <div className="overflow-hidden">
                 <a href={`/post/${post.slug}`}>
                     <img

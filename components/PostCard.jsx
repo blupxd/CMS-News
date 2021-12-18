@@ -6,14 +6,14 @@ import { faClock, } from '@fortawesome/free-solid-svg-icons'
 
 const PostCard = ({ post }) => {
     return (
-        <div className="w-auto h-80 mb-12 rounded-lg mt-4" key={post.excerpt}>
+        <div className="w-auto mb-0 sm:mb-6 rounded-lg mt-4" key={post.excerpt}>
             <div className="overflow-hidden mb-3">
                <a href={`/post/${post.slug}`}>
                    <img
                     src={post.featuredimage.url}
                     alt={post.title}
                     href={`/post/${post.slug}`}
-                    className="h-32 md:h-32 sm:h-64 w-full object-cover"
+                    className="h-32 md:h-32 lg:h-32 sm:h-64 w-full object-cover"
                 />
                 </a>
             </div>
@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
                             {post.title}
                         </Link>
                 </h1>
-                <p className="text-sm">{post.excerpt}</p>
+                <p className="text-xs sm:text-sm">{post.excerpt}</p>
                 <div className="inline-flex gap-1 items-center">
                     <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
                     <p className="text-xs">{moment(post.createdAt).fromNow()}</p>

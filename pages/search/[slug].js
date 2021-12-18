@@ -27,7 +27,7 @@ const SearchResultPosts = () => {
     msg = `We found ${after} posts for you`;
   }
     return (
-        <div className='mx-44 sm:mx-20 mt-12'>
+        <div className='mx-4 sm:mx-20 mt-12'>
           <Searchbar />
           <h1 className='text-4xl font-bold mb-6'>Results for: "{query.slug}"</h1>
           <p className='text-xl text-red-500 mb-6'>{msg}</p>
@@ -37,7 +37,7 @@ const SearchResultPosts = () => {
               return post;
             }
           }).map((post) => (
-            <div className='p-4 flex border-l-4 sm:col-span-2 col-span-1 border-red-500 gap-4 mb-4'>
+            <div className='p-4 flex border-l-4 col-span-2 sm:col-span-2 border-red-500 gap-4 mb-4'>
               <a href={`/post/${post.slug}`}>
                    <img
                     src={post.featuredimage.url}
@@ -47,8 +47,8 @@ const SearchResultPosts = () => {
                 />
                 </a>
                 <div>
-                  <Link href={`/post/${post.slug}`}><p className='text-xl font-bold hover:text-red-500 cursor-pointer transition duration-300 '>{post.title}</p></Link>
-                  <p className='w-64'>{post.excerpt}</p>
+                  <Link href={`/post/${post.slug}`}><p className='md:text-xl sm:text-l text-sm font-bold sm:w-64 w-48 hover:text-red-500 cursor-pointer transition duration-300 '>{post.title}</p></Link>
+                  <p className='w-48 md:text-xl sm:text-l text-sm md:w-64'>{post.excerpt}</p>
                   <div className="inline-flex gap-1 items-center">
                     <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
                     <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
