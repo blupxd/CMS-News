@@ -24,10 +24,10 @@ const PostCard = ({ post }) => {
                             {post.title}
                         </Link>
                 </h1>
-                <p className="text-xs sm:text-sm">{post.excerpt}</p>
+                <p className="text-sm sm:text-sm">{post.excerpt}</p>
                 <div className="inline-flex gap-1 items-center">
-                    <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
-                    <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
+                    <FontAwesomeIcon className="text-red-500" icon={faClock} width="20px" height="20px" />
+                    <p className="text-xs text-red-500">{moment(post.createdAt).fromNow()}</p>
                 </div>  
             </div>
             <hr className='mt-6'></hr>

@@ -32,7 +32,7 @@ const Header = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="lg:contents mx-auto lg:flex hidden md:block sm:block">
+                <div className="lg:contents mx-2 lg:flex hidden md:block sm:block">
                     <div className='flex md:gap-0 lg:gap-0'>
                         {categories.map((category)=>(
                             <div className='lg:contents text-center py-0 sm:py-2'>
@@ -49,19 +49,17 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='block bg-black absolute w-full sm:hidden'>
-                    <div className='absolute mt-0.5 mr-1 right-0'>
+                    <div className='absolute mt-0.5 mr-2 right-0'>
                             <FontAwesomeIcon 
-                                className='text-white' 
+                                className='text-white text-3xl' 
                                 icon={faBars}
-                                size="2x"
                                 style={{ display: showMenu ? 'none' : 'block' }}
                                 onClick={() => setShowMenu(!showMenu)}
                                 />
                             <FontAwesomeIcon
-                                className='text-white mt-0.5 mr-1 hidden'
+                                className='text-white text-3xl hidden'
                                 style={{ display: showMenu ? 'block' : 'none' }}
                                 icon={faTimes}
-                                size="2x"
                                 onClick={() => setShowMenu(!showMenu)}
                             />
                     </div>

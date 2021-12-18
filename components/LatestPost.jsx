@@ -16,19 +16,18 @@ const [latestPost, setLatestPosts] = useState([]);
     }, [])
 
     return (
-            <div className="grid grid-cols-6 lg:grid-rows-2 sm:grid-rows-1 gap-5 mb-16">
+            <div className="grid grid-cols-6 grid-rows-2 gap-5 mb-16">
             
             {latestPost.slice(2,3).map((post)=>  
-                <div key={post.title} className="md:flex sm:flex lg:flex block md:col-span-6 col-span-6 sm:col-span-6 
-                lg:row-span-2 md:col-span-6 lg:col-span-3 sm:col-span-4 sm:row-span-1">
+                <div key={post.title} className="block md:flex col-span-6 lg:col-span-3 row-span-2">
                     <div className="text-left h-30">
-                        <h1 className="transition duration-300 w-32 mb-0 cursor-pointer
-                                    hover:text-red-700 lg:w-64 w-64 md:text-lg sm:w-64 md:w-64 font-semibold">
-                                <a className="text-3xl" href={`/post/${post.slug}`}>
+                        <h1 className="transition duration-300 mb-0 cursor-pointer
+                                    hover:text-red-700 w-64 lg:w-48 font-semibold">
+                                <a className="text-2xl" href={`/post/${post.slug}`}>
                                     {post.title}
                                 </a>
                         </h1>
-                        <p className="text-xl w-72">{post.excerpt}</p>   
+                        <p className="text-xl w-72 lg:w-48">{post.excerpt}</p>   
                         <div className="inline-flex gap-1 items-center">
                             <FontAwesomeIcon className="text-gray-500" icon={faClock} width="16px" height="16px" />
                             <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
@@ -48,28 +47,28 @@ const [latestPost, setLatestPosts] = useState([]);
             </div>
         )}
         {latestPost.slice(0,2).map((post)=>
-            <div key={post.title} className="px-5 lg:contents hidden sm:col-span-6 border-l-4 border-red-500 gap-4 flex lg:col-span-3 md:col-span-6">
+            <div key={post.title} className="px-5 col-span-3 border-l-4 border-red-500 lg:flex hidden">
                 <div className="overflow-hidden">
                 <a href={`/post/${post.slug}`}>
                     <img
                         src={post.featuredimage.url}
                         alt={post.title}
                         href={`/post/${post.slug}`}
-                        className="h-36 w-36 object-cover"
+                        className="h-32 w-36 object-cover"
                     />
                     </a>
                     <div className="flex mt-2 gap-2 items-center">
-                        <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
+                        <FontAwesomeIcon className="text-gray-500" icon={faClock} width="16px" height="16px" />
                         <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
                     </div>
                 </div>
-                <div className="text-left">
-                    <h1 className="transition duration-300 w-64 cursor-pointer hover:text-red-700 text-xl font-semibold">
+                <div className="text-left ml-2">
+                    <h1 className="transition duration-300 w-48 cursor-pointer hover:text-red-700 text-xl font-semibold">
                             <Link href={`/post/${post.slug}`}>
                                 {post.title}
                             </Link>
                     </h1>
-                    <p className="text-sm w-64">{post.excerpt}</p>   
+                    <p className="text-sm w-48">{post.excerpt}</p>   
                 </div>
             </div>
         )}
