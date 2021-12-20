@@ -2,17 +2,7 @@ import Link from 'next/link';
 import { NavbarMob, Searchbar } from '.';
 import React, { useState, useEffect} from 'react'
 import { getCategories } from '../services'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-    faBars,
-    faTimes
-  } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  
-library.add(
-    faBars,
-    faTimes
-  );
+
 const Header = () => {
 
     const [categories, setCategories] = useState([]);
