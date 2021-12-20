@@ -37,13 +37,12 @@ export const PostDetail = ({post}) => {
               />
             );
           case 'video':
-            <video
-                key={index}
-                alt={obj.title}
-                height={obj.height}
-                width={obj.width}
-                src={obj.src}
-              />
+            return(
+              <video width={obj.width} height={obj.height} controls>
+                <source src={obj.src} type="video/mp4"/>
+              </video>
+            );
+            
           default:
             return modifiedText;
         }
