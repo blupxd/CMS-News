@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Searchbar } from '.';
+import { NavbarMob, Searchbar } from '.';
 import React, { useState, useEffect} from 'react'
 import { getCategories } from '../services'
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -8,7 +8,6 @@ import {
     faTimes
   } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getElementById } from 'domutils';
   
 library.add(
     faBars,
@@ -48,34 +47,7 @@ const Header = () => {
                         <Searchbar />  
                     </div>
                 </div>
-                <div className='block bg-black absolute w-full sm:hidden'>
-                    <div className='absolute mt-0.5 mr-2 right-0'>
-                            <FontAwesomeIcon 
-                                className='text-white text-3xl' 
-                                icon={faBars}
-                                style={{ display: showMenu ? 'none' : 'block' }}
-                                onClick={() => setShowMenu(!showMenu)}
-                                />
-                            <FontAwesomeIcon
-                                className='text-white text-3xl hidden'
-                                style={{ display: showMenu ? 'block' : 'none' }}
-                                icon={faTimes}
-                                onClick={() => setShowMenu(!showMenu)}
-                            />
-                    </div>
-                    <div className='text-xl text-center' style={{ display: showMenu ? 'block' : 'none' }}>
-                        {categories.map((category)=>(
-                                <div className='lg:contents text-center py-0 sm:py-2'>
-                                    <Link key={category.slug} href={`/category/${category.slug}`}>
-                                        <span className="text-base text-justify sm:text-sm md:text-sm hover:bg-red-600 sm:px-2 py-2 px-4 text-white align-middle cursor-pointer">
-                                            {category.name}
-                                        </span>
-                                    </Link>
-                                </div>
-                            ))}
-                            <Searchbar /> 
-                    </div>
-                </div>
+                <NavbarMob />
             </div>
         </div>
     )

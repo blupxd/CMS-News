@@ -10,3 +10,4 @@ export { default as LatestPost } from './LatestPost';
 export { default as Loader } from './Loader';
 export { default as Searchbar } from './Searchbar';
 export {default as Footer} from './Footer';
+export {default as NavbarMob } from './NavbarMob';

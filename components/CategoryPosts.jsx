@@ -7,7 +7,7 @@ import { getLatestPosts } from '../services';
 
 
 const CategoryPosts = () => {
-  let cat = [1,2,3];
+  let cat = [1,2,3,4,5,6];
   const [LatestPosts, setLatestPosts] = useState([]);
   useEffect(() => {
     getLatestPosts().then((newLatestPosts) => {
@@ -19,7 +19,7 @@ const CategoryPosts = () => {
   return (
     <>
       <a href={`category/${posts[0].categories[0].slug}`} className="transition duration-300 hover:text-red-800 text-2xl border-l-8 px-2 border-red-500 font-bold">{posts[0].categories[0].name}</a>
-      <div className="grid grid-cols-4 gap-12">
+      <div className="grid grid-cols-4 gap-6">
         {posts.map((post) => (
           <div className="w-auto h-30 lg:col-span-2 col-span-4 md:col-span-4 sm:col-span-4 row-span-3 rounded-lg mt-4" key={post.title}>
             <div className="overflow-hidden">
@@ -37,7 +37,7 @@ const CategoryPosts = () => {
                               {post.title}
                           </Link>
                   </h1>
-                  <p className="w-96 text-l">{post.excerpt}</p>
+                  <p className="w-86 text-l">{post.excerpt}</p>
                     <div className="inline-flex gap-1 items-center mt-2">
                       <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
                       <p className="text-sm">{moment(post.createdAt).fromNow()}</p>
@@ -54,7 +54,7 @@ const CategoryPosts = () => {
                                 {post.title}
                             </Link>
                     </h1>
-                    <p className="w-60 lg:text-l text-sm h-24">{post.excerpt}</p>
+                    <p className="w-64 lg:text-l text-sm h-24">{post.excerpt}</p>
                       <div className="inline-flex items-center">
                         <FontAwesomeIcon className="text-gray-500" icon={faClock} width="20px" height="20px" />
                         <p className="text-xs">{moment(post.createdAt).fromNow()}</p>

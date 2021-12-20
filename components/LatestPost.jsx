@@ -27,7 +27,7 @@ const [latestPost, setLatestPosts] = useState([]);
                                     {post.title}
                                 </a>
                         </h1>
-                        <p className="text-xl w-72 lg:w-48">{post.excerpt}</p>   
+                        <p className="text-xl w-64 lg:w-48">{post.excerpt}</p>   
                         <div className="inline-flex gap-1 items-center">
                             <FontAwesomeIcon className="text-gray-500" icon={faClock} width="16px" height="16px" />
                             <p className="text-xs">{moment(post.createdAt).fromNow()}</p>
